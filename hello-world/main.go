@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -42,11 +43,13 @@ func formatPingResponse() (events.APIGatewayProxyResponse, error) {
 	fmt.Println("ping")
 	json, _ := json.Marshal(
 		struct {
-			Type int
+			Type int `json:"type"`
 		}{
 			Type: 1,
 		},
 	)
+
+	log.Println(string(json))
 
 	return events.APIGatewayProxyResponse{
 		Body:       string(json),

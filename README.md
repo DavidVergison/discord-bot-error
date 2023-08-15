@@ -1,3 +1,5 @@
+## The problem described below is fixed! I was responding to the ping with a capital 'T' in "type". The code has been corrected.
+
 I want to set up a new Discord bot to interact via an HTTP endpoint, but I can't get it to work.
 (aws lambda in golang, exposed through the aws api gateway)
 
